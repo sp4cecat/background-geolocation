@@ -66,8 +66,17 @@ class Watcher {
 }
 
 @objc(BackgroundGeolocation)
-public class BackgroundGeolocation : CAPPlugin, CLLocationManagerDelegate {
+public class BackgroundGeolocation: CAPPlugin,
+                                    CAPBridgedPlugin,
+                                    CLLocationManagerDelegate {
     private var watchers = [Watcher]()
+    public let identifier = "BackgroundGeolocation"
+    public let jsName = "BackgroundGeolocation"
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "addWatcher", returnType: CAPPluginReturnCallback),
+        CAPPluginMethod(name: "removeWatcher", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "openSettings", returnType: CAPPluginReturnPromise)
+    ]
 
     @objc public override func load() {
         UIDevice.current.isBatteryMonitoringEnabled = true

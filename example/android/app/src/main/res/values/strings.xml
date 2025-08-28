@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">example</string>
-    <string name="title_activity_main">example</string>
+    <string name="app_name">background-geolocation-demo</string>
+    <string name="title_activity_main">background-geolocation-demo</string>
     <string name="package_name">com.equimaps.capacitor_background_geolocation_example</string>
     <string name="custom_url_scheme">com.equimaps.capacitor_background_geolocation_example</string>
     <string name="capacitor_background_geolocation_notification_channel_name">GPS</string>
